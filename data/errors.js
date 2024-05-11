@@ -7,7 +7,6 @@ const codes = {
     LAErrorPasscodeNotSet: 'LAErrorPasscodeNotSet',
     LAErrorTouchIDNotAvailable: 'LAErrorTouchIDNotAvailable',
     LAErrorTouchIDNotEnrolled: 'LAErrorTouchIDNotEnrolled',
-    LAErrorTouchIDLockout: 'LAErrorTouchIDLockout',
     RCTTouchIDNotSupported: 'RCTTouchIDNotSupported',
     RCTTouchIDUnknownError: 'RCTTouchIDUnknownError'
   },
@@ -31,8 +30,26 @@ const codes = {
     NOT_ENROLLED: 'NOT_ENROLLED',
     AUTHENTICATION_FAILED: 'AUTHENTICATION_FAILED',
     AUTHENTICATION_CANCELED: 'AUTHENTICATION_CANCELED'
+  },
+  harmonyCodes:{
+    PermissionVerificationFailed : "Permission verification failed",
+    IncorrectParameters:"Incorrect parameters",
+    AuthenticationFailed:"Authentication failed",
+    TheOperationIsCanceled:"The operation is canceled",
+    TheOperationIsTimeOut:"The operation is time-out",
+    TheAuthenticationTypeIsNotSupported:"The authentication type is not supported",
+    TheAuthenticationTrustLevelIsNotSupported:"The authentication trust level is not supported",
+    TheAuthenticationTaskIsBusy:"The authentication task is busy",
+    TheAuthenticatorIsLocked:"The authenticator is locked",
+    GeneralOperationError:"General operation error",
+    TheAuthenticationTypeIsNotSupported:"The authentication type is not supported",
+    TheTypeOfCredentialHasNotBeenEnrolled:"The type of credential has not been enrolled",
+    TheAuthenticationIsCanceledFromWidgetsNavigationButton:"The authentication is canceled from widget's navigation button",
+    IndicatesThatCurrentAuthenticationFailedBecauseOfPINExpired:"Indicates that current authentication failed because of PIN expired"
   }
 };
+
+
 
 const iOSErrors = {
   [codes.iOSCodes.LAErrorAuthenticationFailed]: {
@@ -56,9 +73,6 @@ const iOSErrors = {
   [codes.iOSCodes.LAErrorTouchIDNotEnrolled]: {
     message: 'Authentication could not start because Touch ID has no enrolled fingers.'
   },
-  [codes.iOSCodes.LAErrorTouchIDLockout]: {
-    message: 'Authentication failed because of too many failed attempts.'
-  },
   [codes.iOSCodes.RCTTouchIDUnknownError]: {
     message: 'Could not authenticate for an unknown reason.'
   },
@@ -66,6 +80,22 @@ const iOSErrors = {
     message: 'Device does not support Touch ID.'
   }
 };
+
+const harmonyErrorMap = {
+  201:codes.harmonyCodes.PermissionVerificationFailed,
+  401:codes.harmonyCodes.IncorrectParameters,
+  12500001:codes.harmonyCodes.AuthenticationFailed,
+  12500002:codes.harmonyCodes.GeneralOperationError,
+  12500003:codes.harmonyCodes.TheOperationIsCanceled,
+  12500004:codes.harmonyCodes.TheOperationIsTimeOut,
+  12500005:codes.harmonyCodes.TheAuthenticationTypeIsNotSupported,
+  12500006:codes.harmonyCodes.TheAuthenticationTrustLevelIsNotSupported,
+  12500007:codes.harmonyCodes.TheAuthenticationTaskIsBusy,
+  12500009:codes.harmonyCodes.TheAuthenticatorIsLocked,
+  12500010:codes.harmonyCodes.TheTypeOfCredentialHasNotBeenEnrolled,
+  12500011:codes.harmonyCodes.TheAuthenticationIsCanceledFromWidgetsNavigationButton,
+  12500013:codes.harmonyCodes.IndicatesThatCurrentAuthenticationFailedBecauseOfPINExpired
+}
 
 const androidApiErrorMap = {
   1: codes.androidApiCodes.FINGERPRINT_ERROR_HW_UNAVAILABLE,
@@ -153,5 +183,7 @@ module.exports = {
   iOSErrors,
   androidApiErrorMap,
   androidModuleErrorMap,
-  errors
+  errors,
+  harmonyErrorMap
+
 };
