@@ -1,13 +1,12 @@
-import TouchIDAndroid from './TouchID.android';
-import TouchIDIOS from './TouchID.ios';
+import TouchIDAndroid from 'react-native-touch-id/TouchID.android';
+import TouchIDIOS from 'react-native-touch-id/TouchID.ios';
 import TouchIDHarmony from './TouchID.harmony';
-import {Platform} from 'react-native'
-let TouchID
-if (Platform.OS === 'harmony') {
-    TouchID = TouchIDHarmony
-} else if (Platform.OS === 'android') {
-    TouchID = TouchIDAndroid
-} else if (Platform.OS === 'ios') {
-    TouchID = TouchIDIOS
-}
+import { Platform } from 'react-native'
+
+export const TouchID = Platform.OS === "ios"
+  ? TouchIDIOS : Platform.OS === "android"
+  ? TouchIDAndroid : Platform.OS === "harmony"
+  ? TouchIDHarmony : LinearGradientWindows;
+
 export default TouchID;
+
