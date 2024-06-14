@@ -1,6 +1,6 @@
 {
   "name": "@react-native-oh-tpl/react-native-touch-id",
-  "version": "4.4.1-0.0.1",
+  "version": "4.4.1-0.0.2",
   "description": "React Native authentication with the native Touch ID popup.",
   "scripts": {
     "lint": "node_modules/.bin/eslint .",
@@ -32,7 +32,8 @@
   "homepage": "https://github.com/naoufal/react-native-touch-id",
   "devDependencies": {
     "eslint": "2.0.0",
-    "eslint-plugin-react": "2.7.1"
+    "eslint-plugin-react": "2.7.1",
+    "react-native-touch-id":"4.4.1"
   },
   "harmony": {
     "alias":"react-native-touch-id",

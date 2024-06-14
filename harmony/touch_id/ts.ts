@@ -1,2 +1,2 @@
-export * from './src/main/ets/CalculatorModule'
-export * from './src/main/ets/CalculatorPackage'
+export * from './src/main/ets/TouchIdTuboModule'
+export * from './src/main/ets/TouchIdPackage'

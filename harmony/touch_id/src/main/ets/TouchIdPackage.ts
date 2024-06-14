@@ -1,13 +1,13 @@
 import { TurboModulesFactory ,RNPackage, RNOHContext } from '@rnoh/react-native-openharmony/ts';
 import { TM } from "@rnoh/react-native-openharmony/generated/ts"
 import type {TurboModule ,TurboModuleContext} from '@rnoh/react-native-openharmony/ts'
-import {CalculatorModule} from  './CalculatorModule'
+import { TouchIdTuboModule } from './TouchIdTuboModule'
 
 
-class  CalculatorModuleFactory extends  TurboModulesFactory {
+class  TouchIdModuleFactory extends  TurboModulesFactory {
   createTurboModule(name: string): TurboModule | null {
     if (this.hasTurboModule(name)) {
-      return new CalculatorModule(this.ctx);
+      return new TouchIdTuboModule(this.ctx);
     }
 
     return null
@@ -19,9 +19,9 @@ class  CalculatorModuleFactory extends  TurboModulesFactory {
   }
 }
 
-export  class  CalculatorPackage extends  RNPackage {
+export  class  TouchIdPackage extends  RNPackage {
   createTurboModulesFactory(ctx: RNOHContext): TurboModulesFactory {
-    return new CalculatorModuleFactory(ctx
+    return new TouchIdModuleFactory(ctx
     )
   }
 }
