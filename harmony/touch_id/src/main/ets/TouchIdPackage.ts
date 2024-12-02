@@ -1,4 +1,4 @@
-import { TurboModulesFactory ,RNPackage, RNOHContext } from '@rnoh/react-native-openharmony/ts';
+import { TurboModulesFactory ,RNPackage, UITurboModuleContext } from '@rnoh/react-native-openharmony/ts';
 import { TM } from "@rnoh/react-native-openharmony/generated/ts"
 import type {TurboModule ,TurboModuleContext} from '@rnoh/react-native-openharmony/ts'
 import { TouchIdTuboModule } from './TouchIdTuboModule'
@@ -17,7 +17,8 @@ class  TouchIdModuleFactory extends  TurboModulesFactory {
 }
 
 export  class  TouchIdPackage extends  RNPackage {
-  createTurboModulesFactory(ctx: RNOHContext): TurboModulesFactory {
-    return new TouchIdModuleFactory(ctx)
+  createTurboModulesFactory(ctx: UITurboModuleContext): TurboModulesFactory {
+    return new TouchIdModuleFactory(ctx
+    )
   }
 }
