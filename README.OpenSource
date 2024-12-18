@@ -1,0 +1,11 @@
+[
+    {
+        "Name": "react-native-touch-id",
+        "License": "MIT License",
+        "License File": "https://github.com/naoufal/react-native-touch-id?tab=readme-ov-file#license",
+        "Version Number": "4.4.1",
+        "Owner" : "xiafeng@huawei.com",
+        "Upstream URL": "https://github.com/naoufal/react-native-touch-id",
+        "Description": "React Native authentication with the native Touch ID popup."
+    }
+]
